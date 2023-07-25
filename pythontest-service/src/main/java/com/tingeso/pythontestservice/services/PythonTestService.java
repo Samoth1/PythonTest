@@ -58,6 +58,8 @@ public class PythonTestService {
         }
     }
 
+    //SE PUEDE HACER DESDE EL FRONTEND OKEI, ELIMINAR
+
     //Recibe una lista con todas las respuestas de los usuarios (guardarlas en la lista en el frontend),
     // y una lista con TODAS LAS PREGUNTAS que se mouestran por pantalla (generadas en una funcion anterior)
     public double promedio(ArrayList<String> respuestasUsuario, ArrayList<PythonTestEntity> preguntas){

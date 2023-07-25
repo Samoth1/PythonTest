@@ -23,9 +23,18 @@ public class PythonTestController {
         return ResponseEntity.ok(listaProblemas);
     }
 
+    // PRUEBA PARA VER SI RETORNA LAS PREGUNTAS
+    @GetMapping("/preguntas")
+    public ResponseEntity<ArrayList<PythonTestEntity>> listadoPreguntas(@RequestParam("dificultad") String dificultad){
+        ArrayList<PythonTestEntity> preguntas = pythonTestService.getPreguntasByDificultad(dificultad);
+        return ResponseEntity.ok(preguntas);
+    }
+
     @PostMapping
-    public ResponseEntity<?> guardarProveedor(@RequestBody PythonTestEntity pregunta){
-        pythonTestService.createPythonTest(pregunta.getCodigo(), pregunta.getRespuesta() , pregunta.getDificultad());
+    public ResponseEntity<?> guardarPregunta(@RequestParam("codigo") String codigo,
+                                              @RequestParam("respuesta") String respuesta,
+                                              @RequestParam("dificultad") String dificultad){
+        pythonTestService.createPythonTest(codigo, respuesta, dificultad);
         return ResponseEntity.ok().build();
     }
 
