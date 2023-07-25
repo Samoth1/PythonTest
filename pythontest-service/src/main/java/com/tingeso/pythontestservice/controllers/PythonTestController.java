@@ -25,7 +25,7 @@ public class PythonTestController {
 
     @PostMapping
     public ResponseEntity<?> guardarProveedor(@RequestBody PythonTestEntity pregunta){
-        pythonTestService.createPythonTest(pregunta.getCodigo(), pregunta.getRespuesta() , pregunta.getRespuesta());
+        pythonTestService.createPythonTest(pregunta.getCodigo(), pregunta.getRespuesta() , pregunta.getDificultad());
         return ResponseEntity.ok().build();
     }
 
